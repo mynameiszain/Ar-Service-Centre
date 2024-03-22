@@ -1822,10 +1822,10 @@
              let selectedDate = new Date();
              const calendarEl = document.getElementById('calendar');
              const calendar = new FullCalendar.Calendar(calendarEl, {
-                 initialView: 'dayGridMonth',
+                 initialView: 'dayGridWeek',
                  selectable: true,
-                 hiddenDays: [7],
-                 height: '600px',
+                 hiddenDays: [0],
+                 height: '150px',
                  selectConstraint: "oneDay",
                  selectAllow: function (selectInfo) {
                      return selectInfo.start.getDay() !== 6 && selectInfo.start.getDay() !== 0 &&

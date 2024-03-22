@@ -28,6 +28,7 @@
 
 	<link href="frameworks/mmenu/dist/mmenu.css" rel="stylesheet" />
 	<script src="frameworks/mmenu/dist/mmenu.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 
 
 	<link href="css/style.css" rel="stylesheet" media="all">
@@ -167,7 +168,6 @@
 												</ul>
 
 												<h4><a href="#">Tyre Manufacturers</a></h4>
-
 												<ul>
 													<li><a href="#">Pirelli</a></li>
 													<li><a href="#">Michelin</a></li>
@@ -1049,9 +1049,9 @@
 		<div class="container-fluid kf-breadcrumbs affix-top" data-spy="affix" data-offset-top="124">
 
 			<div class="container">
-				<a href="/"><i class="fa fa-home"></i><span class="hidden-xs">Home</span></a><a href="/mot"><i
-						class="fa fa-chevron-right"></i>MOT</a><a href="mot-book-select.html"><i
-						class="fa fa-chevron-right"></i>Select</a>
+				<a href="/"><i class="fa fa-home"></i><span class="hidden-xs">Home</span></a><a href="/servicing"><i
+						class="fa fa-chevron-right"></i>Servicing</a><i class="fa fa-chevron-right"></i>Select An
+				Appointment
 			</div>
 		</div>
 		<!-- MAIN ARTICLE -->
@@ -1059,172 +1059,229 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-						<!-- SUB-MENU -->
-						<div class="kf-sub-menu">
-
-							<!-- Collapsable Submenu Button -->
-							<div class="kf-sub-menu-header visible-xs">
-								<div class="kf-sub-menu-header_title">Submenu</div>
-								<button type="button" class="btn btn-kf btn-kf-orange kf-sub-menu-header_button"
-									data-toggle="collapse" data-target="#wp-submenu"><i class="fa fa-bars"></i></button>
-							</div>
-
-							<!-- Collapsable Submenu -->
-							<div class="collapse navbar-collapse kf-sub-menu-list affix-top" id="wp-submenu"
-								data-spy="affix" style="">
-
-								<ul>
-									<li><a href="/mot">MOT</a>
-										<ul>
-											<li><a href="/mot">Book Your MOT</a>
-											</li>
-											<li><a href="/mot/when-is-my-mot-due">When is my MOT due?</a>
-											</li>
-											<li><a href="/mot-and-service">Book a Combined MOT &amp; Service</a>
-											</li>
-											<li><a href="/mot/information/mot-pre-checks">MOT information</a>
-												<ul style="display:none;">
-													<li><a href="/mot/information/mot-pre-checks">Pre-MOT Checks</a>
-													</li>
-													<li><a href="/mot/information/mot-failure-and-retest">MOT failure
-															and retest</a>
-													</li>
-													<li><a href="/mot#mottestchecks">MOT test checks</a>
-													</li>
-													<li><a href="/mot/information/can-you-drive-your-car-without-mot">Driving
-															With No MOT</a>
-													</li>
-												</ul>
-											</li>
-											<li><a href="/mot/reminder-service">MOT Reminder Service</a>
-											</li>
-											<li><a href="/mot/information/class-7">Class 7 MOTs</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-
-
-							<style>
-								@media (min-width: 768px) {
-									#wp-submenu.affix {
-										top: 130px;
-										width: 213px;
-									}
-
-									#wp-submenu.affix-bottom {
-										position: absolute;
-									}
-								}
-
-								@media (max-width: 767px) {
-									.affix {
-										position: static;
-									}
-								}
-							</style>
-						</div><!--/.kf-sub-menu-->
-					</div>
-					<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-
+					<div class="col-xs-12">
 						<!-- MAIN-CONTENT -->
 						<div class="kf-main-content">
 
 
-							<h2>Book Your MOT</h2>
 
-							<p id="vehicleData"></p>
-							<table class="table">
-								<thead>
-									<tr>
-										<th class="col-sm-4">Description</th>
-										<th class="col-sm-2 text-right">Price</th>
-										<th class="col-sm-2 text-center"></th>
-										<th class="hidden-xs col-sm-4">Book Online</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>MOT Test for your vehicle</td>
-										<th class="text-right">from £45.50</th>
-										<td class="text-center"><i class="fa fa-info-circle kf-blue"
-												data-toggle="basic-modal" data-modaltitle="MOT"
-												data-modalbody="#ModalBodyMOT"></i></td>
-										<td class="hidden-xs"><button
-												class="btn btn-kf btn-kf-orange btn-block btn-continue"
-												id="book_your_mot"
-												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
-												data-mot="Y" data-service="N" data-servicetype="">Book Your MOT <i
-													class="fa fa-chevron-right"></i></button></td>
-									</tr>
-									<tr class="visible-xs">
-										<td colspan="4"><button class="btn btn-kf btn-kf-orange btn-block btn-continue"
-												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
-												data-mot="Y" data-service="N" data-servicetype="">Book Your MOT <i
-													class="fa fa-chevron-right"></i></button></td>
-									</tr>
-								</tbody>
-							</table>
-
-							<hr>
-
-							<h3>Save money on Servicing with your MOT</h3>
-							<p id="kwik-fit-service"></p>
-							<table class="table">
-								<thead>
-									<tr>
-										<th class="col-sm-4">Description</th>
-										<th class="col-sm-2 text-right">Price</th>
-										<th class="col-sm-2 text-center"></th>
-										<th class="hidden-xs col-sm-4">Book Online</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>MOT and Interim Service</td>
-										<th class="text-right">£242.00</th>
-										<td class="text-center"><i class="fa fa-info-circle kf-blue"
-												data-toggle="basic-modal" data-modaltitle="MOT and Interim Service"
-												data-modalbody="#ModalBodyMOTAndInterimService"></i></td>
-										<td class="hidden-xs"><button class="btn btn-kf btn-info btn-block btn-continue"
-												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
-												data-mot="Y" data-service="Y" data-servicetype="INTERIM">MOT &amp;
-												Interim Service <i class="fa fa-plus"></i></button></td>
-									</tr>
-									<tr class="visible-xs">
-										<td colspan="4"><button class="btn btn-kf btn-info btn-block btn-continue"
-												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
-												data-mot="Y" data-service="Y" data-servicetype="INTERIM">MOT &amp;
-												Interim Service <i class="fa fa-plus"></i></button></td>
-									</tr>
-									<tr>
-										<td>MOT and Full Service</td>
-										<th class="text-right">£318.00</th>
-										<td class="text-center"><i class="fa fa-info-circle kf-blue"
-												data-toggle="basic-modal" data-modaltitle="MOT and Full Service"
-												data-modalbody="#ModalBodyMOTAndFullService"></i></td>
-										<td class="hidden-xs"><button class="btn btn-kf btn-info btn-block btn-continue"
-												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
-												data-mot="Y" data-service="Y" data-servicetype="FULL">MOT &amp; Full
-												Service <i class="fa fa-plus"></i></button></td>
-									</tr>
-									<tr class="visible-xs">
-										<td colspan="4"><button class="btn btn-kf btn-info btn-block btn-continue"
-												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
-												data-mot="Y" data-service="Y" data-servicetype="FULL">MOT &amp; Full
-												Service <i class="fa fa-plus"></i></button></td>
-									</tr>
-								</tbody>
-							</table>
-							<p>
-								For manufacturer servicing, please contact your local centre.
-							</p>
+							<div class="row tyres-2019">
 
 
-							<!-- #frmSMOT-->
-							<form id="frmSMOT" action="/mot/book/appointment" method="post" class="form_vehicle-search">
+								<div class="col-md-4 col-md-push-8 engine-aside">
+									<h2>Your Order</h2>
+									<table class="table table-order-details_lines">
+										<thead>
+											<tr>
+												<th class="col-xs-9 table-order-details_lines--label">Description</th>
+												<th class="text-right table-order-details_lines--value">&nbsp;</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="table-order-details_lines--label service_order_title">1 x Engine Oil and Filter
+													Change at £147.00</td>
+												<td class="text-right table-order-details_lines--value service_order_price">£147.00</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th class="text-right table-order-details_lines--label--total">Total
+												</th>
+												<th class="text-right table-order-details_lines--value service_order_price">£147.00</th>
+											</tr>
+										</tfoot>
+									</table>
+
+								</div>
+
+								<div class="col-md-8 col-md-pull-4">
+									<h2>Select Your Appointment</h2>
+
+
+									<div class="collapse" id="LocateACentre">
+										<br>
+										<div class="appointments_locate-a-centre panel panel-default">
+											<div class="panel-body">
+												<div class="appointments_locate-a-centre_intro">
+													<h3>Change Your Location</h3>
+													<p>Enter your postcode or town to view centres nearest to you. A
+														postcode is required in order to view mobile fitting
+														availability.</p>
+												</div>
+												<form id="frmLocateACentre"
+													class="form-inline appointments_locate-a-centre_form">
+													<div class="form-group">
+														<label for="txtLocateACentre"
+															class="control-label">Town/Postcode</label>
+														<input type="text" id="txtLocateACentre" name="txtLocateACentre"
+															class="form-control appointment" value="">
+													</div>
+													<div class="form-group refine hide" style="margin-top:10px;">
+														<label for="selLocateACentre"
+															class="control-label">Refine</label>
+														<select id="selLocateACentre" name="selLocateACentre"
+															class="form-control">
+															<option value="">Please select</option>
+														</select>
+													</div>
+													<input type="hidden" id="BookingEngine" name="BookingEngine"
+														value="servicing">
+													<input type="hidden" id="CarWebVehicleVehicleCategoryDescription"
+														name="CarWebVehicleVehicleCategoryDescription"
+														value="CARS (exc. Off-Road)">
+													<input type="hidden" id="VehicleFuelType" name="VehicleFuelType"
+														value="DIESEL">
+													<input type="hidden" id="AirConRechargePart"
+														name="AirConRechargePart" value="R134a">
+													<button type="button"
+														class="btn btn-kf btn-primary btn-locate-a-centre--appointment"
+														data-loading-text="Search <i class='fa fa-circle-o-notch fa-spin'></i>">Search
+														<i class="fa fa-search"></i></button>
+												</form>
+												<div class="appointments_locate-a-centre_output" style="display:none;">
+													<div class="appointments_centre appointments_centre--header">
+														<div class="appointments_centre--name">Nearest Centre</div>
+														<div class="appointments_centre--buttons hidden-xs">Select</div>
+													</div>
+													<div class="appointments_locate-a-centre_output--nearest-centre">
+													</div>
+												</div>
+
+												<div class="appointments_locate-a-centre_output--mobile-fitting"
+													style="display:none;">
+													<div class="appointments_locate-a-centre_output">
+														<div class="appointments_centre appointments_centre--header">
+															<div class="appointments_centre--name">Mobile Fitting</div>
+															<div class="appointments_centre--buttons hidden-xs">Select
+															</div>
+														</div>
+														<div class="appointments_locate-a-centre_output--mobile">
+															<div class="appointments_centre">
+																<div class="appointments_centre--name">
+																	<img src="/images/tyres-2020/mobile_icon.png"
+																		width="75" alt="Mobile">&nbsp;&nbsp;We'll fit at
+																	your location!
+																</div>
+																<div class="appointments_centre--buttons">
+																	<button
+																		class="btn btn-success btn-select-mobile-for-appointment mobile btn-block"
+																		data-centreid=""
+																		data-loading-text="Please Wait <i class='fa fa-circle-o-notch fa-spin'></i>">Select
+																		<span class="hidden-sm">Mobile</span> <i
+																			class="fa fa-chevron-right"></i></button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="appointments_locate-a-centre_output" style="display:none;">
+													<div class="appointments_centre appointments_centre--header">
+														<div class="appointments_centre--name">Other Nearby Centres
+														</div>
+														<div class="appointments_centre--buttons hidden-xs">Select</div>
+													</div>
+													<div class="appointments_locate-a-centre_output--nearby-centres">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<hr>
+
+									<div class="loading-appointments" style="display: none;">
+										<h4>Please wait while we check diary availability</h4>
+										<div class="progress">
+											<div class="progress-bar progress-bar-striped active appointment-progress-bar"
+												role="progressbar" aria-valuenow="1476" aria-valuemin="0"
+												aria-valuemax="100" style="width: 1476%;"></div>
+										</div>
+									</div>
+
+									<div class="appointments">
+
+
+										<h3>Your Selected Centre</h3>
+										<div class="tyre-day-availability tyre-day-availability-101275"
+											data-carscentrecode="101275" id="Centre101275">
+											<p class="centre-details"><strong>Kwik Fit - Aldershot</strong><br> 286 High
+												Street, Aldershot, GU12 4LT, <a href="tel:01252 314204">01252
+													314204</a>&nbsp;&nbsp;<a href="#" type="button"
+													class="btn btn-info btn-xs btn-view-map" data-lat="51.245241737394"
+													data-lng="-0.754172801971436" data-title="Kwik Fit - Aldershot">View
+													on Map <i class="fa fa-map-marker"></i></a> </p>
+													<section class="section_calender" id="calendar"></section>
+											
+										</div>
+									</div>
+
+									<hr>
+
+									<small>
+										<p>Please arrive promptly at the appointment time selected to ensure we have
+											time to carry out the service. When booking for a Sunday or Bank Holiday
+											please bring your car to the centre at 10:00am. We are operating normal
+											trading hours on Good Friday. Completing the service and any additional work
+											will usually take most of the day and the centre team will contact you when
+											your vehicle is ready for collection. If you need the car earlier, please
+											contact the centre to discuss.</p>
+										<p>If you experience any difficulties and would like to speak to a member of our
+											team, please call <a href="tel:0800 75 76 77">0800 75 76 77</a>. </p>
+									</small>
+
+								</div>
+
+							</div>
+
+							<form id="frmAppointments" action="/servicing/book/extras" method="post">
+
+								<!-- Hidden Fields -->
+								<input type="hidden" id="DiaryStartDate" name="DiaryStartDate" value="">
+								<input type="hidden" id="DiaryEndDate" name="DiaryEndDate" value="">
+								<input type="hidden" id="DiaryDateSelected" name="DiaryDateSelected" value="">
+								<input type="hidden" id="DefaultDiaryDatesUnavailable"
+									name="DefaultDiaryDatesUnavailable" value="">
+								<input type="hidden" id="RequestDiaryDatesUnavailable"
+									name="RequestDiaryDatesUnavailable" value="">
+								<input type="hidden" id="Postcode" name="Postcode" value="">
+								<input type="hidden" id="CentreId" name="CentreId" value="101275">
+								<input type="hidden" id="OriginAddressType" name="OriginAddressType" value="">
+
+								<input type="hidden" id="MobileApptDate" name="MobileApptDate" value="">
+								<input type="hidden" id="MobileApptType" name="MobileApptType" value="">
+								<input type="hidden" id="MobilePricingID" name="MobilePricingID" value="">
+
+								<input type="hidden" id="MobileSalesforceStartTime" name="MobileSalesforceStartTime"
+									value="">
+								<input type="hidden" id="MobileSalesforceEndTime" name="MobileSalesforceEndTime"
+									value="">
+								<input type="hidden" id="MobileSalesforceSlotTypeCode"
+									name="MobileSalesforceSlotTypeCode" value="">
+
+
+								<input type="hidden" id="FittingType" name="FittingType" value="">
+
+								<!-- Reserve Slot Details -->
+								<input type="hidden" id="CARSDiaryType" name="CARSDiaryType" value="OILANDFILTER">
+								<input type="hidden" id="BranchCode" name="BranchCode" value="101275">
+								<input type="hidden" id="Bay" name="Bay" value="">
+								<input type="hidden" id="DiaryDate" name="DiaryDate" value="">
+								<input type="hidden" id="TemplateId" name="TemplateId" value="">
+								<input type="hidden" id="SlotId" name="SlotId" value="">
+								<input type="hidden" id="BookingEngine" name="BookingEngine" value="servicing">
+
+								<!-- SMOTMOT Reserve Slot Details -->
+								<input type="hidden" id="SMOTMOTBay" name="SMOTMOTBay" value="">
+								<input type="hidden" id="SMOTMOTDiaryDate" name="SMOTMOTDiaryDate" value="">
+								<input type="hidden" id="SMOTMOTTemplateId" name="SMOTMOTTemplateId" value="">
+								<input type="hidden" id="SMOTMOTSlotId" name="SMOTMOTSlotId" value="">
+
+
+								<input type="hidden" id="MobileAvailability" name="MobileAvailability" value=""
+									width="1000">
+								<input type="hidden" id="MobileSlots" name="MobileSlots" value="" width="1000">
 
 								<!-- VEHICLE -->
 								<input type="hidden" id="Vehicle.FuelType" name="Vehicle.FuelType" value="DIESEL">
@@ -1245,166 +1302,281 @@
 								<input type="hidden" id="Vehicle.VehicleCategoryDescription"
 									name="Vehicle.VehicleCategoryDescription" value="CARS (exc. Off-Road)">
 								<input type="hidden" id="Vehicle.ServiceOil" name="Vehicle.ServiceOil" value="521KF110">
-								<input type="hidden" id="Vehicle.Refrigerant" name="Vehicle.Refrigerant" value="">
+								<input type="hidden" id="Vehicle.Refrigerant" name="Vehicle.Refrigerant" value="R134a">
 								<input type="hidden" id="Vehicle.MotDueDate" name="Vehicle.MotDueDate"
 									value="29/09/2023">
-								<br>
 
-								<input type="hidden" id="MOT" name="MOT" value="">
-								<input type="hidden" id="Service" name="Service" value="">
-								<input type="hidden" id="ServiceType" name="ServiceType" value="">
 
-								<input type="hidden" id="Postcode" name="Postcode" value="">
-								<input type="hidden" id="CARSCentreCode" name="CARSCentreCode" value="101275">
 							</form>
 
 
-							<div id="ModalBodyMOT" class="hide">
-								<p>Save money on the standard MOT price by booking your MOT online.</p>
+
+							<!-- Modal - Appointment Times -->
+							<div class="modal fade" id="modal_tyre_appointment_times" tabindex="-1" role="dialog"
+								aria-labelledby="Modal - Appointment Times" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close btn-select-another-date"
+												aria-hidden="true">×</button>
+											<h4 class="modal-title tyre_appointment_times_loaded_title">
+											</h4>
+										</div>
+										<div class="modal-body">
+
+											<p>To continue with your booking, please select your appointment time from
+												the list below.</p>
+
+
+
+
+											<div class="form-group">
+												<label class="control-label">Select Your Appointment Time</label>
+												<select id="DiaryAppointment" name="DiaryAppointment"
+													class="form-control">
+													<option value="">Please select</option>
+												</select>
+											</div>
+
+											<div class="centre-note">
+												<p>Please note:<br>
+													Centres do not open until 10:00 on bank holidays. If choosing an
+													appointment on a bank holiday please bring your vehicle to the
+													centre at 10:00 rather than 08:30 as shown.</p>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button"
+												class="btn btn-kf btn-info btn-md btn-block-xs btn-select-another-date">Select
+												Another Date <i class="fa fa-times"></i></button>
+											<button type="button"
+												class="btn btn-kf btn-kf-orange btn-md btn-block-xs btn-reserve-appointment"
+												disabled="disabled"
+												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>">Reserve
+												<span class="hidden-xs">Your</span> Appointment <i
+													class="fa fa-chevron-right"></i></button>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div id="ModalBodyMOTAndInterimService" class="hide">
-								<p>Save by booking your Interim Service with an MOT. We recommend having an Interim
-									Service every 6,000 miles or 6 months, whichever is sooner. Our Interim Service
-									comprises a full range of vehicle safety checks including a visual brake inspection
-									plus the following replacement parts:</p>
-								<ul>
-									<li>Drain and replace engine oil with recommended oil for your vehicle (includes
-										synthetic and specialist oils for an additional charge)</li>
-									<li>Replacement oil filter</li>
-									<li>Check coolant and washer fluid levels and top up</li>
-								</ul>
-								<p>Our service price is calculated based on a combination of factors which include the
-									recommended oil for your vehicle and your selected centre.</p>
-								<p><a href="/servicing#whatsincluded" target="_blank">View a full checklist of what’s
-										included in your service.</a></p>
-							</div>
-							<div id="ModalBodyMOTAndFullService" class="hide">
-								<p>Save by booking your Full Service with an MOT. Our Full Service is ideal as an annual
-									maintenance programme for your car. We recommend your car receives a Full Service
-									every 12,000 miles or 12 months, whichever is sooner. Our Full Service comprises a
-									full range of vehicle safety checks including a full ‘wheel-off’ brake inspection
-									plus the following replacement parts:</p>
-								<ul>
-									<li>Replacement air filter</li>
-									<li>Drain and replace engine oil with recommended oil for your vehicle (includes
-										synthetic and specialist oils for an additional charge)</li>
-									<li>Replacement oil filter</li>
-									<li>Check fluid levels and top up coolant, screenwash and power steering fluids</li>
-								</ul>
-								<p>Our service price is calculated based on a combination of factors which include the
-									recommended oil for your vehicle and your selected centre.</p>
-								<p><a href="/servicing#whatsincluded" target="_blank">View a full checklist of what’s
-										included in your service.</a></p>
+
+							<!-- Modal - Appointment Times -->
+							<div class="modal fade" id="modal_tyre_salesforce_appointment_times" tabindex="-1"
+								role="dialog" aria-labelledby="Modal - Appointment Times" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close btn-select-another-date"
+												aria-hidden="true">×</button>
+											<h4 class="modal-title tyre_appointment_times_loaded_title">
+											</h4>
+										</div>
+										<div class="modal-body">
+
+											<p>To continue with your booking, please select your appointment time from
+												the list below.</p>
+
+
+
+											<div class="form-group hidden">
+												<label class="control-label">Select Your Appointment Time</label>
+												<select id="SalesforceDiaryAppointment"
+													name="SalesforceDiaryAppointment" class="form-control ">
+													<option value="">Please select</option>
+												</select>
+											</div>
+
+											<div class="row mobile-slots" data-toggle="buttons">
+												<div class="col-md-4">
+													<p><strong>Anytime</strong></p>
+													<div class="slots-Anytime"></div>
+												</div>
+												<div class="col-md-4">
+													<p><strong>Half Day Slots</strong></p>
+													<div class="slots-4-Hour-Slot"></div>
+												</div>
+												<div class="col-md-4">
+													<p><strong>Two Hour Slots</strong></p>
+													<div class="slots-2-Hour-Slot"></div>
+												</div>
+
+											</div>
+
+											<div class="centre-note">
+												<p>Please note:<br>
+													Centres do not open until 10:00 on bank holidays. If choosing an
+													appointment on a bank holiday please bring your vehicle to the
+													centre at 10:00 rather than 08:30 as shown.</p>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button"
+												class="btn btn-kf btn-info btn-md btn-block-xs btn-select-another-date">Select
+												Another Date <i class="fa fa-times"></i></button>
+											<button type="button"
+												class="btn btn-kf btn-kf-orange btn-md btn-block-xs btn-reserve-appointment"
+												disabled="disabled"
+												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>">Reserve
+												<span class="hidden-xs">Your</span> Appointment <i
+													class="fa fa-chevron-right"></i></button>
+										</div>
+									</div>
+								</div>
 							</div>
 
 
-							<div id="ModalBodyEssentialService" class="hide">
-								<p>Our Engine Oil and Filter Change package includes the following:</p>
-								<ul class="fa-ul">
-									<li><i class="fa-li fa fa-check-circle text-success"></i>Engine oil drained</li>
-									<li><i class="fa-li fa fa-check-circle text-success"></i>Replacement sump plug
-										washer</li>
-									<li><i class="fa-li fa fa-check-circle text-success"></i>Oil refill based on
-										manufacturer's recommendation</li>
-									<li><i class="fa-li fa fa-check-circle text-success"></i>Replacement oil filter</li>
-								</ul>
-								<p>Please note: Because Engine Oil and Filter Change does not include a full range of
-									vehicle checks, we are unable to stamp your log book or reset your service light on
-									your dashboard when you select this option.</p>
-								<p>Our price is calculated based on a combination of factors which include the
-									recommended oil for your vehicle and your selected centre.</p>
-								<p><a href="/servicing/packages/engine-oil-and-filter-change" target="_blank">Learn more
-										about our Engine Oil and Filter Change</a></p>
-							</div>
-							<div id="ModalBodyInterimService" class="hide">
-								<p>We recommend having an Interim Service every 6,000 miles or 6 months, whichever is
-									sooner. Our Interim Service comprises a full range of vehicle safety checks
-									including a visual brake inspection plus the following replacement parts:</p>
-								<ul>
-									<li>Drain and replace engine oil with recommended oil for your vehicle (includes
-										synthetic and specialist oils for an additional charge)</li>
-									<li>Replacement oil filter</li>
-									<li>Check coolant and washer fluid levels and top up</li>
-								</ul>
-								<p>Our service price is calculated based on a combination of factors which include the
-									recommended oil for your vehicle and your selected centre.</p>
-								<p><a href="/servicing#whatsincluded" target="_blank">View a full checklist of what’s
-										included in your service.</a></p>
-							</div>
-							<div id="ModalBodyFullService" class="hide">
-								<p>Our Full Service is ideal as an annual maintenance programme for your car. We
-									recommend your car receives a Full Service every 12,000 miles or 12 months,
-									whichever is sooner. Our Full Service comprises a full range of vehicle safety
-									checks including a full ‘wheel-off’ brake inspection plus the following replacement
-									parts:</p>
-								<ul>
-									<li>Replacement air filter</li>
-									<li>Drain and replace engine oil with recommended oil for your vehicle (includes
-										synthetic and specialist oils for an additional charge)</li>
-									<li>Replacement oil filter</li>
-									<li>Check fluid levels and top up coolant, screenwash and power steering fluids</li>
-								</ul>
-								<p>Our service price is calculated based on a combination of factors which include the
-									recommended oil for your vehicle and your selected centre.</p>
-								<p><a href="/servicing#whatsincluded" target="_blank">View a full checklist of what’s
-										included in your service.</a></p>
+							<div id="NearestCentreTemplate" style="display:none;">
+								<div class="tyres-2019_centre">
+									<div class="tyres-2019_centre--name">
+										<strong>{displaycentrename}</strong><br>
+										<small>{address1}, {address2} {postcode}
+											Telephone {telephone}
+										</small>
+									</div>
+									<div class="tyres-2019_centre--buttons">
+										<button class="btn btn-info btn-view-map" data-lat="{lat}" data-lng="{lng}"
+											data-title="{displaycentrename}">View Map <i
+												class="fa fa-map-marker"></i></button>
+										<button class="btn btn-success btn-select-centre-for-appointment"
+											data-centreid="{carscentrecode}" data-postcode="{postcode}"
+											data-loading-text="Please Wait <i class='fa fa-circle-o-notch fa-spin'></i>">Select
+											<span class="hidden-sm">Centre</span> <i
+												class="fa fa-chevron-right"></i></button>
+									</div>
+								</div>
 							</div>
 
-							<style>
-								ul.fa-ul {
-									margin-left: 30px;
-								}
+							<script
+								src="//maps.googleapis.com/maps/api/js?key=AIzaSyDjRKS4_dMlwzYOLz5cbjxZJdlmu4XpZeQ&amp;sensor=false"></script>
 
-								ul.fa-ul li {
-									line-height: 28px;
-								}
 
-								.fa-li {
-									font-size: 21px;
-									top: 0.1em;
-								}
-							</style>
-
+							
 							<script>
 
+								var centres = new Array();
+								var mobileWeekIndex = 0;
 
 								//*************************
-								/* Javascript init for engine starter */
+								//javascript init for the page
 								$(document).ready(function () {
 
-									//$("input[type='hidden']").attr("type","text");
 
-									$(".btn-continue").on("click", function () {
-										$("#MOT").val($(this).attr("data-mot"));
-										$("#Service").val($(this).attr("data-service"));
-										$("#ServiceType").val($(this).attr("data-servicetype"));
-										addSMOTToOrder("#frmSMOT", this);
+
+									//btn previous week!
+									$("body").on("click", ".btn-previous-week", function () {
+
+										ccc = $(this).attr("data-carscentrecode");
+
+										var obj = $(centres).filter(function (i, n) {
+											return n.carsCentreCode == ccc;
+										});
+
+										obj[0].weekIndex--;
+
+										loadCentreDayAvailabilityForCentre(obj[0], -1)
+									});
+
+									//btn next week!
+									$("body").on("click", ".btn-next-week", function () {
+
+										ccc = $(this).attr("data-carscentrecode");
+
+										var obj = $(centres).filter(function (i, n) {
+											return n.carsCentreCode == ccc;
+										});
+
+										console.log(obj[0].carsCentreCode);
+
+										obj[0].weekIndex++;
+
+										loadCentreDayAvailabilityForCentre(obj[0], -1)
+									});
+
+									//btn next week mobile!
+									$("body").on("click", ".btn-next-week-mobile", function () {
+
+										mobileWeekIndex++;
+
+										loadTyreDayAvailabilityForMobile()
+									});
+
+									//btn next week mobile!
+									$("body").on("click", ".btn-previous-week-mobile", function () {
+
+										mobileWeekIndex--;
+
+										loadTyreDayAvailabilityForMobile()
+									});
+
+									//what happens when we click on a date
+									$("body").on("click", "td.appt-free", function () {
+										if ($(this).attr('data-carscentrecode') != '') {
+											loadDiaryAppointments(this);
+										} else {
+											loadMobileDiaryAppointments(this);
+										}
+									});
+
+									//create an array of the centre codes and load the variable pricing
+									loadCentreDayAvailabilityForCentres();
+
+									//create moobile availability table
+									//loadTyreDayAvailabilityForMobile();
+
+									$(document).ajaxStop(function () {
+										increaseProgressBar(100);
+										$(".appointments").show();
+
+										var artInt = setTimeout(function () { $(".loading-appointments").hide(); }, 500)
 									});
 
 
-									$("[data-toggle='basic-modal']").on("click", function () {
-										modalBasic("#modal_basic", $(this).data("modaltitle"), $($(this).data("modalbody")).html());
+									//listener for the modal button being clicked
+									$(".btn-select-another-date").on("click", function () {
+										selectAnotherDate(this);
+									});
+
+									//listener for the appt changing
+									$("#DiaryAppointment").on("change", function () {
+										diaryAppointmentChanged(this);
 									});
 
 
-									//C7 checks for smot bookings!
-									$("body").on("click", ".btn-c7-check-continue", function () {
-										$("#MOT").val($(this).attr("data-mot"));
-										$("#Service").val($(this).attr("data-service"));
-										$("#ServiceType").val($(this).attr("data-servicetype"));
-										smotC7Check();
-									});
 
-									//Does your vehicle require a Class7 MOT
-									$("body").on("click", ".btn-c7-view-class-7-mot-centres", function () {
-										document.location = "/mot/information/class-7";
-									});
-
-									$("body").on("click", ".btn-c7-book-standard-mot", function () {
-										addSMOTToOrder("#frmSMOT", this);
+									//button to reserve the appointment
+									$(".btn-reserve-appointment").on("click", function () {
+										if ($('#FittingType').val() == 'CENTRE') {
+											reserveDiaryAppointment(this);
+										} else {
+											reserveMobileDiaryAppointment(this);
+										}
 									});
 
 
+									//VehicleSearch - Postcode - Keyup
+									$("#txtLocateACentre").on("keyup", function (event) {
+										$(this).val($(this).val().toUpperCase());
+									});
+
+
+									$("body").on("click", ".btn-view-map", function () {
+										viewMap(this);
+									});
+
+									$(".btn-locate-a-centre--appointment").on("click", function () {
+										appointmentLocateACentre(this);
+									});
+
+									$("#txtLocateACentre.appointment").on("keyup keydown keypress", function (event) {
+										if (event.keyCode == 10 || event.keyCode == 13) {
+											event.preventDefault();
+											$(".btn-locate-a-centre--appointment").trigger("click");
+										}
+									});
+
+									$("body").on("click", ".btn-select-centre-for-appointment", function () {
+										selectCentreForAppointments(this);
+									});
 
 								});
 								//*************************
@@ -1412,28 +1584,427 @@
 
 
 
-								function smotC7Check() {
 
-									var modalOpts = {};
+								//*************************	
+								//diaryAppointmentChanged(obj)
+								function diaryAppointmentChanged(obj) {
 
-									modalOpts.id = "#modal_custom-buttons";
-									modalOpts.title = "Does your vehicle require a Class 7 MOT?";
-									modalOpts.html = "<p>A Class 7 MOT is required for goods vehicles between 3,000kg and 3,500kg design gross weight.</p>";
-									modalOpts.html += "<p>Ash Road Service offers Class 7 MOT tests at a number of Ash Road Service centres across the UK. To book, please contact your local Class 7 MOT test centre.</p>";
-									modalOpts.html += "<p>Please note: it is the customer's responsibility to check the MOT class of their vehicle before they book.</p>";
-									modalOpts.footer = "<button class=\"btn btn-block btn-kf btn-warning btn-c7-view-class-7-mot-centres\">Yes - View Class 7 MOT Centres <i class=\"fa fa-chevron-right\" /></button>";
-									//	modalOpts.footer += "<button class=\"btn btn-block btn-kf btn-success btn-c7-book-standard-mot\" data-loading-text=\"Please wait <i class='fa fa-circle-o-notch fa-spin'></i>\">No - Continue to book a standard MOT <i class=\"fa fa-chevron-right\" /></button>";
 
-									modalCustomButtons(modalOpts);
+									if ($(obj).val() == "") {
+
+										$(".btn-reserve-appointment").prop("disabled", true);
+									} else {
+
+										//get the selected option
+										opt = $(obj).find("option:selected");
+
+										if ($('#FittingType').val() == 'CENTRE') {
+											//set the variables
+											$("#Bay").val($(opt).attr("data-bay"));
+											$("#DiaryDate").val($(opt).attr("data-appointmentdate"));
+											$("#SlotId").val($(opt).attr("data-slotid"));
+											$("#TemplateId").val($(opt).attr("data-templateid"));
+
+											$('#MobileApptDate').val('');
+											$('#MobileApptType').val('');
+											$('#MobilePricingID').val('');
+
+											$('#MobileSalesforceStartTime').val('');
+											$('#MobileSalesforceEndTime').val('');
+											$('#MobileSalesforceSlotTypeCode').val('');
+										} else {
+											$("#Bay").val('');
+											$("#DiaryDate").val('');
+											$("#SlotId").val('');
+											$("#TemplateId").val('');
+
+											$('#MobileApptDate').val($(opt).attr("data-apptdate"));
+											$('#MobileApptType').val($(opt).attr("data-appttype"));
+											$('#MobilePricingID').val($(opt).attr("data-mobilepricingid"));
+
+											$('#MobileSalesforceStartTime').val($(opt).attr("data-salesforcestarttime"));
+											$('#MobileSalesforceEndTime').val($(opt).attr("data-salesforceendtime"));
+											$('#MobileSalesforceSlotTypeCode').val($(opt).attr("data-salesforceslottypecode"));
+
+
+										}
+										//remove the disabled button
+										$(".btn-reserve-appointment").prop("disabled", false);
+									}
 								}
+								//*************************	
 
 
 
 
 								//*************************
-								//addSMOTToOrder(formid,obj)
-								function addSMOTToOrder(formid, obj) {
+								//loadMOTVariablePricingForCentres()
+								function loadCentreDayAvailabilityForCentres() {
+									$(".tyre-day-availability").each(function (i, o) {
 
+										centres.push({
+											carsCentreCode: $(o).attr("data-carscentrecode"),
+											weekIndex: 0,
+											CARSDiaryType: $("#CARSDiaryType").val(),
+											VehicleFuelType: "DIESEL",
+											AirConRechargePart: "R134a"
+										});
+									});
+
+									if (centres.length > 0) {
+										loadCentreDayAvailabilityForCentre(centres[0], 0)
+									}
+
+
+								}
+								//*************************
+
+
+								//*************************
+								//loadCentreDayAvailabilityForCentre(obj,ind)
+								function loadCentreDayAvailabilityForCentre(obj, ind) {
+
+									centre = obj;
+
+									element = $(".tyre-day-availability[data-carscentrecode='" + centre.carsCentreCode + "']");
+
+									//disable all the buttons
+									$(".btn-previous-week").addClass("btn-default").removeClass("btn-info").disable();
+									$(".btn-next-week").addClass("btn-default").removeClass("btn-info").disable();
+
+
+									$.ajax({
+										url: "/ajax/common/appointments/diary-availability_table.asp",
+										data: centre,
+										type: "POST",
+										beforeSend: function (jqXHR, settings) {
+											$(element).find(".diary-dates").hide();
+											$(element).find(".diary-dates-loading").show();
+										},
+										success: function (data, textStatus, jqXHR) {
+
+											if (jQuery.isXMLDoc(data)) {
+												xml = $(data);
+
+												$(element).replaceWith(xml.find("BODY").text());
+
+												//reset the elements!
+												element = $(".tyre-day-availability[data-carscentrecode='" + centre.carsCentreCode + "']");
+
+											} else {
+												modalBasic("#modal_basic", "Unknown Error <i class=\"fa fa-exclamation\"></i>", standardErrorMessage);
+											}
+
+											$(element).find(".diary-dates").show();
+											$(element).find(".diary-dates-loading").hide();
+
+											if (ind >= 0) {
+												if (ind < centres.length - 1) {
+													loadCentreDayAvailabilityForCentre(centres[ind + 1], ind + 1);
+												}
+											}
+
+											//update the variable pricing navigation
+											updateTyreDayAvailabilityNavigation();
+
+											increaseProgressBar(12);
+										},
+										error: function (jqXHR, textStatus, errorThrown) {
+
+											//show the modal
+											modalBasic("#modal_basic", errorThrown + " <i class=\"fa fa-exclamation\"></i>", textStatus);
+
+										}
+									});
+								}
+								//*************************
+
+
+
+								//*************************
+								function increaseProgressBar(incrementAmount) {
+
+									//get current state
+									var currentStatus = $(".appointment-progress-bar").attr("aria-valuenow");
+									currentStatus = parseInt(currentStatus);
+
+									var newStatus = currentStatus + incrementAmount;
+
+									//set state
+									$(".progress-bar").css("width", newStatus + "%").attr("aria-valuenow", newStatus);
+
+									//artificially increment
+									var artInt = setTimeout(function () { increaseProgressBar(1); }, 1000)
+								}
+								//*************************
+
+								//*************************
+								//updateTyreDayAvailabilityNavigation
+								function updateTyreDayAvailabilityNavigation() {
+
+									if ($(".tyre-day-availability-loading")[0]) {
+										// still loading, do nothing
+									} else {
+										$(centres).each(function (i, c) {
+
+											ccc = c.carsCentreCode
+
+											btnNext = $(".btn-next-week[data-carscentrecode='" + ccc + "']");
+											btnPrevious = $(".btn-previous-week[data-carscentrecode='" + ccc + "']");
+
+											$(btnPrevious).addClass("btn-info").removeClass("btn-default").enable();
+											$(btnNext).addClass("btn-info").removeClass("btn-default").enable();
+
+											if (c.weekIndex == 0) {
+												$(btnPrevious).addClass("btn-default").removeClass("btn-info").disable();
+											} else if (c.weekIndex == 34) {
+												$(btnNext).addClass("btn-default").removeClass("btn-info").disable();
+											}
+										});
+									}
+
+								}
+								//*************************
+
+
+
+								//*************************
+								//loadDiaryAppointments()
+								function loadDiaryAppointments(obj) {
+
+									//get the diary date	
+									var carsCentreCode = $(obj).attr("data-carscentrecode")
+									var diaryDateSelected = $(obj).attr("data-diarydate")
+									var diaryDateSelectedDisplay = $.swzFormatDateTime("l jS F", diaryDateSelected);
+
+									$("#BranchCode").val(carsCentreCode);
+									$("#DiaryDateSelected").val(diaryDateSelected);
+									$('#FittingType').val('CENTRE');
+
+									$('.express-mid-week-offer').hide();
+									$('.express-discount').hide();
+
+									//load the details
+									$.ajax({
+										url: "/ajax/common/appointments/diary-appointments.asp",
+										beforeSend: function () {
+
+											$(".appt-selected").removeClass("appt-selected");
+											$(obj).addClass("appt-selected");
+
+											//remove all the options from the appointment select
+											$("#DiaryAppointment").html("<option value=\"\">Please select</option>");
+
+											//disabled the reserve appt button
+											$(".btn-reserve-appointment").prop("disabled", true);
+										},
+										timeout: 30000,
+										type: "POST",
+										accepts: "text/json",
+										dataType: "json",
+										data: $("#frmAppointments").serialize(),
+										success: function (json) {
+
+											if (json.hasOwnProperty("error")) {
+
+												//show the error
+												modalBasic("#modal_basic", "CARS API Error " + json.error.number, json.error.description)
+
+												//update the status
+												updateAppointmentStatus("Select Your Appointment Date", "Please select a date from the calendar below.", false);
+
+												//re-enable the	datepicker
+												$("#Datepicker").datepicker("enable");
+
+											} else {
+
+												//get the dates
+												dates = json.Content;
+
+												//create an array of the dates
+												arrDates = Object.keys(dates);
+
+												//create an motAppt object - this is used in MOT and Service
+												var smotMOTAppt = { found: false };
+
+												//loop through the dates
+												$(arrDates).each(function (dateIndex, thisDate) {
+
+													//create an array of the bays at this date
+													arrBays = Object.keys(dates[thisDate]);
+
+													//create a string for the appt times
+													var apptTimesAlreadyFound = new String();
+
+													//loop through the bays and get the appointments for each item
+													$(arrBays).each(function (bayIndex, thisBay) {
+
+														arrAppts = dates[thisDate][thisBay];
+
+
+
+														//loop through the appointments and show one option for each appointment time...
+														$(arrAppts).each(function (apptIndex, appt) {
+
+															slotTypeToFind = $("#CARSDiaryType").val();
+
+															if (appt.Type == slotTypeToFind && appt.StatusId == 1 && apptTimesAlreadyFound.indexOf(appt.AppointmentTime) == -1 && (appt.ExpressAvailable == "true" || appt.ExpressAvailable == "na")) {
+
+																//create the object
+																if (appt.ExpressAvailable == "true") {
+																	//format express price
+																	if (appt.ExpressPrice == '0') {
+																		thisExpressPrice = 'Free';
+																	} else {
+																		thisExpressPrice = '&pound;' + appt.ExpressPrice.toFixed(2);
+																	}
+																	//show the express fitting price in option
+																	thisOption = $("<option>" + appt.AppointmentTime + " - Express Fitting - " + thisExpressPrice + "</option>");
+																	//also show mid week offer details
+																	if (appt.AppointmentDay == '1' || appt.AppointmentDay == '2' || appt.AppointmentDay == '3' || appt.AppointmentDay == '4') {
+																		$('.express-mid-week-offer').show();
+																	}
+																	//show any discount
+																	$('.express-discount').show();
+
+
+																} else {
+																	//just show the time
+																	thisOption = $("<option>" + appt.AppointmentTime + "</option>");
+																	$('.express-mid-week-offer').hide();
+																	$('.express-discount').hide();
+																}
+
+
+
+																$(thisOption).attr("data-appointmentdate", appt.AppointmentDate);
+																$(thisOption).attr("data-templateid", appt.TemplateId);
+																$(thisOption).attr("data-slotid", appt.SlotId);
+																$(thisOption).attr("data-bay", appt.Bay);
+																$("#DiaryAppointment").append(thisOption);
+
+																//add to the times already found
+																apptTimesAlreadyFound += ";" + appt.AppointmentTime;
+															}
+
+														});
+
+													});
+
+												});
+
+
+												//update the modal title
+												$(".tyre_appointment_times_loaded_title").html("Appointments on " + diaryDateSelectedDisplay);
+
+												//centre appointments, so show centre notes
+												$('.centre-note').show();
+
+												//sort the select
+												sortSelect("#DiaryAppointment", {});
+
+												//show the modal
+												$("#modal_tyre_appointment_times").modal();
+											}
+
+										},
+										error: function (jqXHR, textStatus, errorThrown) {
+											//call the basic modal	
+											modalBasic("#modal_basic", errorThrown + " <i class=\"fa fa-exclamation\"></i>", textStatus);
+										},
+										complete: function () { }
+									});
+
+								}
+								//*************************
+
+
+
+
+								//*************************	
+								//selectAnotherDate(obj)
+								function selectAnotherDate(obj) {
+
+									//remove any highlights
+									$(".appt-selected").removeClass("appt-selected");
+
+									//dismiss the modal
+									$("#modal_tyre_appointment_times").modal("hide");
+
+									//dismiss the modal
+									$("#modal_tyre_salesforce_appointment_times").modal("hide");
+								}
+								//*************************	
+
+
+
+
+
+								//*************************	
+								//sqlDateToJSDate(str)
+								//translate an sql date to Javascript date
+								function sqlDateToJSDate(str) {
+
+									//declare variables
+									var arr = str.split("-");
+									var thisYear = arr[0];
+									var thisMonth = arr[1];
+									var thisDate = arr[2];
+									var jsDate;
+
+									//get the javascript date!
+									jsDate = new Date(Number(thisYear), Number(thisMonth) - 1, Number(thisDate));
+
+									//return the jsDate
+									return jsDate;
+								}
+								//*************************		
+
+
+
+								//*************************	
+								//jsDateToSQLDate(str)
+								//translate an javascript date to sql date
+								function jsDateToSQLDate(date) {
+
+									//declare variables
+									var thisDate = date;
+									var sqlDate = new String();
+									var thisYear = date.getFullYear();
+									var thisMonth = date.getMonth();
+									var thisDate = date.getDate();
+
+									//add the year
+									sqlDate = thisYear;
+
+									//add the month
+									//increment the month so that we are actually getting back 1-12 instead of 0-11 for jan-dec
+									sqlDate += "-";
+									thisMonth++;
+									if (thisMonth < 10) {
+										sqlDate += "0" + thisMonth;
+									} else {
+										sqlDate += thisMonth;
+									}
+
+									//add the date
+									sqlDate += "-";
+									if (thisDate < 10) {
+										sqlDate += "0" + thisDate;
+									} else {
+										sqlDate += thisDate;
+									}
+
+									//return the sqldate
+									return sqlDate;
+								}
+								//*************************		
+
+
+
+								//*************************
+								//reserveDiaryAppointment(obj)
+								function reserveDiaryAppointment(obj) {
 									//declare variables
 									var btn;
 									var postData;
@@ -1446,12 +2017,295 @@
 									standardErrorMessage = "<p>Sorry, an error occurred.</p>";
 
 									$.ajax({
-										url: "/ajax/smot/add-to-order.asp",
-										data: $(formid).serialize(),
+										url: "/ajax/common/appointments/diary-reservation.asp",
+										data: $("#frmAppointments").serialize(),
 										type: "POST",
 										beforeSend: function (jqXHR, settings) {
-											$(".btn-continue").prop("disabled", "disabled");
 											$(btn).prop("disabled", "disabled").button("loading");
+										},
+										success: function (data, textStatus, jqXHR) {
+
+											if (jQuery.isXMLDoc(data)) {
+
+												xml = $(data);
+
+												if (xml.find("STATUS").text() == "SUCCESS") {
+													window.location = "/servicing/book/extras";
+													return;
+												} else {
+													//select another date!
+													selectAnotherDate(this);
+
+													//call the basic modal	
+													modalBasic("#modal_basic", xml.find("TITLE").text(), xml.find("BODY").text());
+												}
+											} else {
+												$("#modal_basic-ajax-call .modal-title").html("Unknown Error <i class=\"fa fa-exclamation\"></i>");
+												$("#modal_basic-ajax-call .modal-body").html(standardErrorMessage);
+
+												//select another date!
+												selectAnotherDate(this);
+
+												//call the basic modal	
+												modalBasic("#modal_basic", "Unknown Error <i class=\"fa fa-exclamation\"></i>", standardErrorMessage);
+											}
+
+											//enable the button
+											$(btn).prop("disabled", "disabled").button("reset");
+										},
+										error: function (jqXHR, textStatus, errorThrown) {
+
+											//select another date!
+											selectAnotherDate(this);
+
+											//call the basic modal	
+											modalBasic("#modal_basic", errorThrown + " <i class=\"fa fa-exclamation\"></i>", textStatus);
+
+											//enable the button
+											$(btn).prop("disabled", false).button("reset");
+										}
+									});
+								}
+								//*************************
+
+
+								//*************************
+								//reserveDiaryAppointment(obj)
+								function reserveDiaryAppointment(obj) {
+									//declare variables
+									var btn;
+									var postData;
+									var standardErrorMessage;
+
+									//access to the btn from the ajax block
+									btn = $(obj);
+
+									//standard fallback error message
+									standardErrorMessage = "<p>Sorry, an error occurred.</p>";
+
+									$.ajax({
+										url: "/ajax/common/appointments/diary-reservation.asp",
+										data: $("#frmAppointments").serialize(),
+										type: "POST",
+										beforeSend: function (jqXHR, settings) {
+											$(btn).prop("disabled", "disabled").button("loading");
+										},
+										success: function (data, textStatus, jqXHR) {
+
+											if (jQuery.isXMLDoc(data)) {
+
+												xml = $(data);
+
+												if (xml.find("STATUS").text() == "SUCCESS") {
+													window.location = "/servicing/book/extras";
+													return;
+												} else {
+													//select another date!
+													selectAnotherDate(this);
+
+													//call the basic modal	
+													modalBasic("#modal_basic", xml.find("TITLE").text(), xml.find("BODY").text());
+												}
+											} else {
+												$("#modal_basic-ajax-call .modal-title").html("Unknown Error <i class=\"fa fa-exclamation\"></i>");
+												$("#modal_basic-ajax-call .modal-body").html(standardErrorMessage);
+
+												//select another date!
+												selectAnotherDate(this);
+
+												//call the basic modal	
+												modalBasic("#modal_basic", "Unknown Error <i class=\"fa fa-exclamation\"></i>", standardErrorMessage);
+											}
+
+											//enable the button
+											$(btn).prop("disabled", "disabled").button("reset");
+										},
+										error: function (jqXHR, textStatus, errorThrown) {
+
+											//select another date!
+											selectAnotherDate(this);
+
+											//call the basic modal	
+											modalBasic("#modal_basic", errorThrown + " <i class=\"fa fa-exclamation\"></i>", textStatus);
+
+											//enable the button
+											$(btn).prop("disabled", false).button("reset");
+										}
+									});
+								}
+								//*************************
+
+
+								//*************************
+								//reserveMobileDiaryAppointment(obj)
+								function reserveMobileDiaryAppointment(obj) {
+									//declare variables
+									var btn;
+									var postData;
+									var standardErrorMessage;
+
+									//access to the btn from the ajax block
+									btn = $(obj);
+
+									//standard fallback error message
+									standardErrorMessage = "<p>Sorry, an error occurred.</p>";
+
+									$.ajax({
+										url: "/ajax/tyres-2020/mobile-diary-reservation.asp",
+										data: $("#frmAppointments").serialize(),
+										type: "POST",
+										beforeSend: function (jqXHR, settings) {
+											$(btn).prop("disabled", "disabled").button("loading");
+										},
+										success: function (data, textStatus, jqXHR) {
+
+											if (jQuery.isXMLDoc(data)) {
+
+												xml = $(data);
+
+												if (xml.find("STATUS").text() == "SUCCESS") {
+													window.location = "/tyres/search/mobile";
+													return;
+												} else {
+													//select another date!
+													selectAnotherDate(this);
+
+													//call the basic modal	
+													modalBasic("#modal_basic", xml.find("TITLE").text(), xml.find("BODY").text());
+												}
+											} else {
+												$("#modal_basic-ajax-call .modal-title").html("Unknown Error <i class=\"fa fa-exclamation\"></i>");
+												$("#modal_basic-ajax-call .modal-body").html(standardErrorMessage);
+
+												//select another date!
+												selectAnotherDate(this);
+
+												//call the basic modal	
+												modalBasic("#modal_basic", "Unknown Error <i class=\"fa fa-exclamation\"></i>", standardErrorMessage);
+											}
+
+											//enable the button
+											$(btn).prop("disabled", "disabled").button("reset");
+										},
+										error: function (jqXHR, textStatus, errorThrown) {
+
+											//select another date!
+											selectAnotherDate(this);
+
+											//call the basic modal	
+											modalBasic("#modal_basic", errorThrown + " <i class=\"fa fa-exclamation\"></i>", textStatus);
+
+											//enable the button
+											$(btn).prop("disabled", false).button("reset");
+										}
+									});
+								}
+								//*************************
+
+
+
+								//*************************	
+								//sortSelect(id,opts)
+								//function to sort select options based upon either their text or value
+								function sortSelect(id, opts) {
+
+									var options;
+									var first
+
+									var defaults = {
+										ignoreFirst: true,
+										sortBy: "text",
+										value: ""
+									}
+
+									var sel = $(id);
+									var settings = $.extend(true, defaults, opts);
+
+									if (settings.ignoreFirst == true) {
+										options = sel.find("option").not(':first');
+										first = sel.find("option:first");
+									} else {
+										options = sel.find("option");
+									}
+
+									if (settings.sortBy == "text") {
+										options.sort(function (a, b) {
+											if (a.text > b.text) return 1;
+											if (a.text < b.text) return -1;
+											return 0
+										});
+									} else {
+										options.sort(function (a, b) {
+											if ($(a).val() > $(b).val()) return 1;
+											if ($(a).val() < $(b).val()) return -1;
+											return 0
+										});
+									}
+
+									$(sel).empty().append(first);
+									$(sel).append(options);
+									$(sel).val(settings.value);
+								}
+								//*************************	
+
+								//*************************	
+								//viewMap(btn)
+								function viewMap(btn) {
+
+									var lat = $(btn).attr("data-lat");
+									var lng = $(btn).attr("data-lng");
+									var title = $(btn).attr("data-title");
+
+									var latlng = new google.maps.LatLng(lat, lng);
+
+
+									//set the map options
+									var mapOptions = {
+										zoom: 13,
+										center: latlng
+									};
+
+									html = "<div id=\"ViewMap\" style=\"width:100%;height:400px;\"></div>";
+
+									$.ModalBasic(title, html);
+
+									//create the map
+									googleMap = new google.maps.Map(document.getElementById('ViewMap'), mapOptions);
+
+									var marker = new google.maps.Marker({
+										position: latlng,
+										map: googleMap,
+										title: title
+									});
+
+								}
+								//*************************	
+
+
+
+								//*************************	
+								//appointmentLocateACentre(obj)
+								function appointmentLocateACentre(obj) {
+
+									//declare variables
+									var btn;
+									var standardErrorMessage;
+
+									//access to the btn from the ajax block
+									btn = $(obj);
+
+									//standard fallback error message
+									standardErrorMessage = "<p>Sorry, an error occurred.</p>";
+
+
+
+
+									$.ajax({
+										url: "/ajax/common/appointments/locate-a-centre.asp",	//url to access the data
+										data: $("#frmLocateACentre").serialize(),		//data to pass (mostly $(frm).serialize()
+										method: "POST", 								//POST, GET, PUT
+										beforeSend: function (jqHXR, settings) {
+											$(btn).button("loading");
 										},
 										success: function (data, textStatus, jqXHR) {
 
@@ -1462,60 +2316,119 @@
 												//check if the intial search was successful
 												if (xml.find("STATUS").text() == "SUCCESS") {
 
-													//submit the form and move to the next stage!
-													$(formid).submit();
 
-													//exit the function!
-													return;
+													var json = $.parseJSON(xml.find("JSON").text());
 
-												} else if (xml.find("STATUS").text() == "BOOKINGEXISTS") {
+													$("#OriginAddressType").val(xml.find("OriginAddressType").text());
 
-													//show the options
-													modalCustomButtons({
-														id: "#modal_custom-buttons",
-														title: xml.find("TITLE").text(),
-														html: xml.find("BODY").text(),
-														footer: xml.find("BUTTONS").text()
-													});
+													if (json.status == "centres") {
 
-													$("body").on("click", ".btn-create-new-booking", function () {
-														createNewBooking(function () {
-															$("#modal_custom-buttons").modal("hide");
-															addSMOTToOrder(formid, obj);
+														html = "<!--Centres-->";
+
+														for (i = 0; i < json.centres.length && i < 5; i++) {
+
+															if (i == 0) {
+																$(".appointments_locate-a-centre_output--nearest-centre").html(nearestCentreHTML(json.centres[i]));
+															} else {
+																html += nearestCentreHTML(json.centres[i]);
+															}
+														}
+
+														//replace the html!
+														$(".appointments_locate-a-centre_output--nearby-centres").html(html);
+														$(".appointments_locate-a-centre_output").show();
+
+														if (xml.find("OriginAddressType").text() == "POSTCODEDISTRICT" && $("#selLocateACentre").val() == "") {
+															$("#txtLocateACentre").val(xml.find("OriginAddress").text());
+														}
+
+													} else if (json.status == "refine") {
+
+														html = "<option value=\"\">Please select</option>";
+
+														$(json.OriginRefine).each(function (i, k) {
+															html += "<option value=\"" + k.value + "\">" + k.label + "</option>";
 														});
-													});
+
+														$("#selLocateACentre").html(html);
+														$("#frmLocateACentre .refine").removeClass("hide");
+													} else {
+														$.ModalBasic("No centres found", json.description);
+													}
+
+													if (xml.find("OriginAddressType").text() == "POSTCODEUNIT" && json.status != "refine" && $("#selLocateACentre").val() == '') {
+														$("#Postcode").val(xml.find("OriginAddress").text());
+													} else if (xml.find("OriginAddressType").text() != "POSTCODEDISTRICT" || json.status != "refine" || $("#selLocateACentre").val() != '') {
+														$("#Postcode").val('');
+													}
+
+
 
 												} else {
-													modalBasic("#modal_basic", xml.find("TITLE").text(), xml.find("BODY").text());
+													$.ModalBasic(xml.find("TITLE").text(), xml.find("BODY").text());
 												}
 
-
-												//waiting...
-												$(btn).prop("disabled", false).button("reset");
-												$(".btn-continue").prop("disabled", false);
-
-
 											} else {
-
-												modalBasic("#modal_basic", "Unknown Error <i class=\"fa fa-exclamation\"></i>", standardErrorMessage);
+												$.ModalBasic("Error", standardErrorMessage);
 											}
 
-											//show the modal!
-											$("#modal_basic-ajax-call").modal();
-
+										},
+										complete: function (jqXHR, textStatus) {
+											$(btn).button("reset");
 										},
 										error: function (jqXHR, textStatus, errorThrown) {
-											//show the modal
-											modalBasic("#modal_basic", errorThrown + " <i class=\"fa fa-exclamation\"></i>", textStatus);
-											$(btn).prop("disabled", false).button("reset");
-											$(".btn-continue").prop("disabled", false);
+											$.ModalBasic(textStatus, errorThrown);
 										}
 									});
+
+
+
+									$('.appointments_locate-a-centre_output--mobile-fitting').hide();
+								}
+								//*************************	
+
+								//*************************					
+								//nearestCentreHTML(obj)
+								function nearestCentreHTML(obj) {
+
+									var html = $("#NearestCentreTemplate").html();
+
+									Object.keys(obj).forEach(function (k) {
+										//        html = html.replace("{" + k + "}", obj[k]);
+										html = html.replace(new RegExp("{" + k + "}", "g"), obj[k]);
+									});
+
+									return html;
+								}
+								//*************************
+
+								//*************************	
+								//selectCentre(cid)
+								function selectCentreForAppointments(btn) {
+
+									$(btn).button("loading");
+
+									centreId = $(btn).attr("data-centreid");
+									if ($("#selLocateACentre").val() != '') {
+										postcode = $(btn).attr("data-postcode");
+									} else {
+										postcode = $("#txtLocateACentre").val();
+									}
+
+									$("#BranchCode").val(centreId);
+									$("#Postcode").val(postcode);
+
+									var url = "/servicing/book/appointment"; //"/servicing/book/appointment";
+
+									$("#frmAppointments").attr("action", url).submit();
 
 								}
 								//*************************
 
 							</script>
+
+
+
 						</div><!--/.kf-main-content-->
 					</div><!--/.col-*-->
 				</div><!--/.row-->
@@ -2110,68 +3023,15 @@
 		<script>
 
 			$(document).ready(function () {
-				let selectedDate = new Date();
-				const calendarEl = document.getElementById('calendar');
-				const calendar = new FullCalendar.Calendar(calendarEl, {
-					initialView: 'dayGridWeek',
-					selectable: true,
-					hiddenDays: [0],
-					height: '150px',
-					selectConstraint: "oneDay",
-					selectAllow: function (selectInfo) {
-						return selectInfo.start.getDay() !== 6 && selectInfo.start.getDay() !== 0 &&
-							selectInfo.end.getDay() !== 6 && selectInfo.end.getDay() !== 0;
-					},
-					select: function (info) {
-						selectedDate = info.start.toLocaleDateString('en-GB');
-						sessionStorage.setItem("selectedDate", JSON.stringify(selectedDate))
-						$("#modal_appointment_times").show()
-						$(".close").click(function () { $("#modal_appointment_times").hide() });
-					},
-					dateClick: function (info) {
-						selectedDate = info.date.toLocaleDateString('en-GB');
-						sessionStorage.setItem("selectedDate", JSON.stringify(selectedDate))
-						calendar.select(info.date);
-						$("#modal_appointment_times").show()
-						$(".close").click(function () { $("#modal_appointment_times").hide() });
-					},
+				let serviceDetailsJSON = sessionStorage.getItem("serviceDetails");
+				let serviceDetails = JSON.parse(serviceDetailsJSON);
 
-					validRange: {
-						start: new Date().toISOString().split('T')[0]
-					},
+				let { title, price } = serviceDetails;
+				
+				$('.service_order_title').text(`1x ${title} at £${price}`)
+				$('.service_order_price').text(`£${price}`)
 
-					eventDidMount: function () {
-						const storedDate = JSON.parse(sessionStorage.getItem("selectedDate"));
-						if (storedDate) {
-							const cells = calendar.getCells();
-							for (let i = 0; i < cells.length; i++) {
-								const cellDate = new Date(cells[i].dataset.date);
-								if (cellDate.toLocaleDateString('en-GB') === storedDate) {
-									cells[i].classList.add('fc-state-highlight');
-									break;
-								}
-							}
-						}
-					}
-				});
-
-				calendar.render();
-
-
-
-				const storedvehicleDetails = JSON.parse(sessionStorage.getItem("vehicleDetails"));
-				console.log(storedvehicleDetails);
-				if (storedvehicleDetails) {
-					const dateParts = storedvehicleDetails.DateFirstRegistered.split('-');
-					const year = dateParts[0];
-
-
-					$('#vehicleData').text(`To book your MOT for your ${year} ${storedvehicleDetails.Make} ${storedvehicleDetails.Model} , ${storedvehicleDetails.Vrm}, please click the button below.`)
-					$('#kwik-fit-service').text(`Why not service your ${storedvehicleDetails.Make}, ${storedvehicleDetails.Vrm} at Ash Road Service at the same time as your MOT? With
-								trained technicians, the latest diagnostic equipment, guaranteed parts and labour - why
-								pay more elsewhere?`)
-				}
-
+				
 
 
 				$("#finding-your-tyre-size a[data-toggle='tab']").on("shown.bs.tab", function (e) {
@@ -2219,9 +3079,6 @@
 
 
 			function tyreSizeSearchHelpModal(obj) {
-
-
-
 				var sec = $("select.tyre-size-search-helper-select[rel='sec']");
 				var asp = $("select.tyre-size-search-helper-select[rel='asp']");
 				var rim = $("select.tyre-size-search-helper-select[rel='rim']");
@@ -2231,10 +3088,8 @@
 				var btn = $(".btn-tyre-size-options--tyre-size-select");
 
 				if (sec.val() == null || sec.val() == "") {
-
 					//reset the tyre size
 					tyreSize = {};
-
 					//reset all the other drop downs and disable them!
 					$(asp).html("").disable();
 					$(rim).html("").disable();
@@ -2242,7 +3097,6 @@
 
 					//load the aspect ratios!
 					targetSelect = sec;
-
 				} else if (asp.val() == null || asp.val() == "" || rel == "sec") {
 
 					//set the tyre sizse
@@ -2254,9 +3108,7 @@
 
 					//load the aspect ratios!
 					targetSelect = asp;
-
 				} else if (rim.val() == null || rim.val() == "" || rel == "asp") {
-
 					//set the tyre sizse
 					tyreSize = { sec: sec.val(), asp: asp.val() };
 
@@ -2265,15 +3117,12 @@
 
 					//load the aspect ratios!
 					targetSelect = rim;
-
 				} else if (spd.val() == null || spd.val() == "" || rel == "rim") {
-
 					//set the tyre sizse
 					tyreSize = { sec: sec.val(), asp: asp.val(), rim: rim.val() };
 
 					//load the aspect ratios!
 					targetSelect = spd;
-
 				} else {
 
 
@@ -2332,6 +3181,9 @@
 					}
 
 				}
+
+
+
 			}
 
 			$('#book_your_mot').click(() => window.location.href = 'calender.html')
@@ -2346,6 +3198,56 @@
 		</span>
 
 	</div><!-- div id page -->
+
+	<script>
+		let selectedDate = new Date();
+             const calendarEl = document.getElementById('calendar');
+             const calendar = new FullCalendar.Calendar(calendarEl, {
+                 initialView: 'dayGridWeek',
+                 selectable: true,
+                 hiddenDays: [0],
+                 height: '150px',
+                 selectConstraint: "oneDay",
+                 selectAllow: function (selectInfo) {
+                     return selectInfo.start.getDay() !== 6 && selectInfo.start.getDay() !== 0 &&
+                         selectInfo.end.getDay() !== 6 && selectInfo.end.getDay() !== 0;
+                 },
+                 select: function (info) {
+                     selectedDate = info.start.toLocaleDateString('en-GB');
+                     sessionStorage.setItem("selectedDate", JSON.stringify(selectedDate))
+                     $("#modal_appointment_times").show()
+                     $(".close").click(function () {$("#modal_appointment_times").hide()});
+                 },
+                 dateClick: function (info) {
+                     selectedDate = info.date.toLocaleDateString('en-GB');
+                     sessionStorage.setItem("selectedDate", JSON.stringify(selectedDate))
+                     calendar.select(info.date);
+                     $("#modal_appointment_times").show()
+                     $(".close").click(function () {$("#modal_appointment_times").hide()});
+                 },
+ 
+                 validRange: {
+                     start: new Date().toISOString().split('T')[0]
+                 },
+ 
+                 eventDidMount: function () {
+                     const storedDate = JSON.parse(sessionStorage.getItem("selectedDate"));
+                     if (storedDate) {
+                         const cells = calendar.getCells();
+                         for (let i = 0; i < cells.length; i++) {
+                             const cellDate = new Date(cells[i].dataset.date);
+                             if (cellDate.toLocaleDateString('en-GB') === storedDate) {
+                                 cells[i].classList.add('fc-state-highlight');
+                                 break;
+                             }
+                         }
+                     }
+                 }
+             });
+ 
+             calendar.render();
+ 
+	</script>
 </body>
 
 </html>

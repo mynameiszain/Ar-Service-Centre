@@ -1049,8 +1049,8 @@
 		<div class="container-fluid kf-breadcrumbs affix-top" data-spy="affix" data-offset-top="124">
 
 			<div class="container">
-				<a href="/"><i class="fa fa-home"></i><span class="hidden-xs">Home</span></a><a href="/mot"><i
-						class="fa fa-chevron-right"></i>MOT</a><a href="mot-book-select.html"><i
+				<a href="/"><i class="fa fa-home"></i><span class="hidden-xs">Home</span></a><a href="/servicing"><i
+						class="fa fa-chevron-right"></i>Servicing</a><a href="/servicing/select"><i
 						class="fa fa-chevron-right"></i>Select</a>
 			</div>
 		</div>
@@ -1072,34 +1072,57 @@
 
 							<!-- Collapsable Submenu -->
 							<div class="collapse navbar-collapse kf-sub-menu-list affix-top" id="wp-submenu"
-								data-spy="affix" style="">
+								data-spy="affix">
 
 								<ul>
-									<li><a href="/mot">MOT</a>
+									<li><a href="/servicing">Servicing</a>
 										<ul>
-											<li><a href="/mot">Book Your MOT</a>
+											<li><a href="/servicing">Book Your Service</a>
 											</li>
-											<li><a href="/mot/when-is-my-mot-due">When is my MOT due?</a>
-											</li>
-											<li><a href="/mot-and-service">Book a Combined MOT &amp; Service</a>
-											</li>
-											<li><a href="/mot/information/mot-pre-checks">MOT information</a>
+											<li><a href="/servicing/information/why-service-your-car">Servicing
+													Information</a>
 												<ul style="display:none;">
-													<li><a href="/mot/information/mot-pre-checks">Pre-MOT Checks</a>
+													<li><a href="/servicing/information/why-service-your-car">Why
+															service your car?</a>
 													</li>
-													<li><a href="/mot/information/mot-failure-and-retest">MOT failure
-															and retest</a>
+													<li><a href="/servicing/information/what-service-for-my-car">What
+															service do I need?</a>
 													</li>
-													<li><a href="/mot#mottestchecks">MOT test checks</a>
+													<li><a href="/servicing/information/why-service-your-car">What's
+															included in my service?</a>
 													</li>
-													<li><a href="/mot/information/can-you-drive-your-car-without-mot">Driving
-															With No MOT</a>
+													<li><a href="/servicing/information/vehicles">Servicing for your
+															vehicle</a>
 													</li>
 												</ul>
 											</li>
-											<li><a href="/mot/reminder-service">MOT Reminder Service</a>
+											<li><a href="/servicing/packages/interim-and-full-service">Service
+													Packages</a>
+												<ul style="display:none;">
+													<li><a href="/servicing/packages/interim-and-full-service">Interim
+															&amp; Full Service</a>
+													</li>
+													<li><a href="/servicing/packages/manufacturer-servicing">Manufacturer
+															Service</a>
+													</li>
+													<li><a href="/servicing/packages/engine-oil-and-filter-change">Engine
+															Oil and Filter Change</a>
+													</li>
+												</ul>
 											</li>
-											<li><a href="/mot/information/class-7">Class 7 MOTs</a>
+											<li><a href="/servicing/service-pricing">Service Pricing</a>
+											</li>
+											<li><a href="/servicing/van-service">Van Service</a>
+											</li>
+											<li><a href="/servicing/electric-vehicle-service">Electric Vehicle
+													Service</a>
+											</li>
+											<li><a href="/servicing/hybrid-service">Hybrid Service</a>
+											</li>
+											<li><a href="/servicing/pollen-filters">Pollen Filters</a>
+											</li>
+											<li><a href="/servicing/information/what-oil-for-my-car">What oil do I need
+													for my car?</a>
 											</li>
 										</ul>
 									</li>
@@ -1133,9 +1156,9 @@
 						<div class="kf-main-content">
 
 
-							<h2>Book Your MOT</h2>
-
-							<p id="vehicleData"></p>
+							<h2>Book Your Service Online</h2>
+							<p>To book a Service for your 2012 VOLKSWAGEN SHARAN SEL TDI BLUEMOTION TECHNOLOGY DSG,
+								KM12AKK, please choose the service type below.</p>
 							<table class="table">
 								<thead>
 									<tr>
@@ -1147,31 +1170,68 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>MOT Test for your vehicle</td>
-										<th class="text-right">from £45.50</th>
+										<td>Engine Oil and Filter Change</td>
+										<th class="text-right price">£147.00</th>
 										<td class="text-center"><i class="fa fa-info-circle kf-blue"
-												data-toggle="basic-modal" data-modaltitle="MOT"
-												data-modalbody="#ModalBodyMOT"></i></td>
+												data-toggle="basic-modal" data-modaltitle="Engine Oil and Filter Change"
+												data-modalbody="#ModalBodyEssentialService"></i></td>
 										<td class="hidden-xs"><button
-												class="btn btn-kf btn-kf-orange btn-block btn-continue"
-												id="book_your_mot"
+												class="btn btn-kf btn-kf-orange btn-block select_service"
 												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
-												data-mot="Y" data-service="N" data-servicetype="">Book Your MOT <i
-													class="fa fa-chevron-right"></i></button></td>
+												data-mot="N" data-service="Y" data-servicetype="ESSENTIAL">Engine Oil and Filter Change <i class="fa fa-chevron-right"></i></button></td>
 									</tr>
 									<tr class="visible-xs">
-										<td colspan="4"><button class="btn btn-kf btn-kf-orange btn-block btn-continue"
+										<td colspan="4"><button
+												class="btn btn-kf btn-kf-orange btn-block select_service"
 												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
-												data-mot="Y" data-service="N" data-servicetype="">Book Your MOT <i
-													class="fa fa-chevron-right"></i></button></td>
+												data-mot="N" data-service="Y" data-servicetype="ESSENTIAL">Engine Oil and Filter Change <i class="fa fa-chevron-right"></i></button></td>
+									</tr>
+									<tr>
+										<td>Interim Service</td>
+										<th class="text-right price">£213.00</th>
+										<td class="text-center"><i class="fa fa-info-circle kf-blue"
+												data-toggle="basic-modal" data-modaltitle="Interim Service"
+												data-modalbody="#ModalBodyInterimService"></i></td>
+										<td class="hidden-xs"><button
+												class="btn btn-kf btn-kf-orange btn-block select_service"
+												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
+												data-mot="N" data-service="Y" data-servicetype="INTERIM">Interim Service
+												<i class="fa fa-chevron-right"></i></button></td>
+									</tr>
+									<tr class="visible-xs">
+										<td colspan="4">
+											<button class="btn btn-kf btn-kf-orange btn-block select_service"
+												data-loading-text="Please wait <i class='fa fa-circle-o-notch fa-spin'></i>"
+												data-mot="N" data-service="Y" data-servicetype="INTERIM">Interim Service
+												<i class="fa fa-chevron-right"></i></button></td>
+									</tr>
+									<tr>
+										<td>Full Service</td>
+										<th class="text-right price">£288.00</th>
+										<td class="text-center"><i class="fa fa-info-circle kf-blue "
+												data-toggle="basic-modal" data-modaltitle="Full Service"
+												data-modalbody="#ModalBodyFullService"></i></td>
+										<td class="hidden-xs">
+											<button class="btn btn-kf btn-kf-orange btn-block select_service ">Full Service 
+												<i class="fa fa-chevron-right"></i>
+											</button>
+										</td>
+									</tr>
+									<tr class="visible-xs">
+										<td colspan="4">
+											<button class="btn btn-kf btn-kf-orange btn-block select_service" >Full Service
+												<i class="fa fa-chevron-right"></i>
+											</button>
+										</td>
 									</tr>
 								</tbody>
 							</table>
 
 							<hr>
 
-							<h3>Save money on Servicing with your MOT</h3>
-							<p id="kwik-fit-service"></p>
+							<h3>Book an MOT at the same time and save money!</h3>
+							<p>Does your VOLKSWAGEN, KM12AKK require an MOT? Book your MOT and Service online and save
+								time and money!</p>
 							<table class="table">
 								<thead>
 									<tr>
@@ -1218,13 +1278,15 @@
 									</tr>
 								</tbody>
 							</table>
+
 							<p>
 								For manufacturer servicing, please contact your local centre.
 							</p>
 
 
 							<!-- #frmSMOT-->
-							<form id="frmSMOT" action="/mot/book/appointment" method="post" class="form_vehicle-search">
+							<form id="frmSMOT" action="/servicing/book/appointment" method="post"
+								class="form_vehicle-search">
 
 								<!-- VEHICLE -->
 								<input type="hidden" id="Vehicle.FuelType" name="Vehicle.FuelType" value="DIESEL">
@@ -1419,7 +1481,7 @@
 									modalOpts.id = "#modal_custom-buttons";
 									modalOpts.title = "Does your vehicle require a Class 7 MOT?";
 									modalOpts.html = "<p>A Class 7 MOT is required for goods vehicles between 3,000kg and 3,500kg design gross weight.</p>";
-									modalOpts.html += "<p>Ash Road Service offers Class 7 MOT tests at a number of Ash Road Service centres across the UK. To book, please contact your local Class 7 MOT test centre.</p>";
+									modalOpts.html += "<p>Kwik Fit offers Class 7 MOT tests at a number of Kwik Fit centres across the UK. To book, please contact your local Class 7 MOT test centre.</p>";
 									modalOpts.html += "<p>Please note: it is the customer's responsibility to check the MOT class of their vehicle before they book.</p>";
 									modalOpts.footer = "<button class=\"btn btn-block btn-kf btn-warning btn-c7-view-class-7-mot-centres\">Yes - View Class 7 MOT Centres <i class=\"fa fa-chevron-right\" /></button>";
 									//	modalOpts.footer += "<button class=\"btn btn-block btn-kf btn-success btn-c7-book-standard-mot\" data-loading-text=\"Please wait <i class='fa fa-circle-o-notch fa-spin'></i>\">No - Continue to book a standard MOT <i class=\"fa fa-chevron-right\" /></button>";
@@ -2106,78 +2168,13 @@
 			</div>
 		</div>
 
-
+		<script src="js/custom.js"></script>
 		<script>
 
 			$(document).ready(function () {
-				let selectedDate = new Date();
-				const calendarEl = document.getElementById('calendar');
-				const calendar = new FullCalendar.Calendar(calendarEl, {
-					initialView: 'dayGridWeek',
-					selectable: true,
-					hiddenDays: [0],
-					height: '150px',
-					selectConstraint: "oneDay",
-					selectAllow: function (selectInfo) {
-						return selectInfo.start.getDay() !== 6 && selectInfo.start.getDay() !== 0 &&
-							selectInfo.end.getDay() !== 6 && selectInfo.end.getDay() !== 0;
-					},
-					select: function (info) {
-						selectedDate = info.start.toLocaleDateString('en-GB');
-						sessionStorage.setItem("selectedDate", JSON.stringify(selectedDate))
-						$("#modal_appointment_times").show()
-						$(".close").click(function () { $("#modal_appointment_times").hide() });
-					},
-					dateClick: function (info) {
-						selectedDate = info.date.toLocaleDateString('en-GB');
-						sessionStorage.setItem("selectedDate", JSON.stringify(selectedDate))
-						calendar.select(info.date);
-						$("#modal_appointment_times").show()
-						$(".close").click(function () { $("#modal_appointment_times").hide() });
-					},
-
-					validRange: {
-						start: new Date().toISOString().split('T')[0]
-					},
-
-					eventDidMount: function () {
-						const storedDate = JSON.parse(sessionStorage.getItem("selectedDate"));
-						if (storedDate) {
-							const cells = calendar.getCells();
-							for (let i = 0; i < cells.length; i++) {
-								const cellDate = new Date(cells[i].dataset.date);
-								if (cellDate.toLocaleDateString('en-GB') === storedDate) {
-									cells[i].classList.add('fc-state-highlight');
-									break;
-								}
-							}
-						}
-					}
-				});
-
-				calendar.render();
-
-
-
-				const storedvehicleDetails = JSON.parse(sessionStorage.getItem("vehicleDetails"));
-				console.log(storedvehicleDetails);
-				if (storedvehicleDetails) {
-					const dateParts = storedvehicleDetails.DateFirstRegistered.split('-');
-					const year = dateParts[0];
-
-
-					$('#vehicleData').text(`To book your MOT for your ${year} ${storedvehicleDetails.Make} ${storedvehicleDetails.Model} , ${storedvehicleDetails.Vrm}, please click the button below.`)
-					$('#kwik-fit-service').text(`Why not service your ${storedvehicleDetails.Make}, ${storedvehicleDetails.Vrm} at Ash Road Service at the same time as your MOT? With
-								trained technicians, the latest diagnostic equipment, guaranteed parts and labour - why
-								pay more elsewhere?`)
-				}
-
-
-
 				$("#finding-your-tyre-size a[data-toggle='tab']").on("shown.bs.tab", function (e) {
 					target = $(e.target).attr("href");
 					related = $(e.relatedTarget).attr("href");
-
 					$("#finding-your-tyre-size .tab-image div[rel='" + related + "']").addClass("hide");
 					$("#finding-your-tyre-size .tab-image div[rel='" + target + "']").removeClass("hide");
 				});
@@ -2332,6 +2329,9 @@
 					}
 
 				}
+
+
+
 			}
 
 			$('#book_your_mot').click(() => window.location.href = 'calender.html')
